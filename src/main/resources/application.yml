@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: admin-server
+
+logging:
+  level:
+    org:
+      springframework.web: DEBUG
+    com:
+      ga:
+        adminserver: info
+  file:
+    name: logs/server.log
+    path: logs
+
+server:
+  port: 8888
+
+management:
+  endpoint:
+    health:
+      show-details: always
+    logfile.external-file: logs/server.log
+  endpoints:
+    web:
+      exposure:
+        include: "*"
